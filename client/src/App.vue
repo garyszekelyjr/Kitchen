@@ -2,7 +2,6 @@
 </script>
 
 <script lang="ts">
-
 export default {
     data() {
         return {
@@ -11,7 +10,9 @@ export default {
         }
     },
     methods: {
-        async search(e: Event) { this.items = (await (await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=Lk3iBc7LT1vWeyRuRPrlof9n639DqmLkyd8ROLUv&query=${this.item}`)).json())['foods']; }
+        async search(e: Event) {
+            this.items = (await (await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=Lk3iBc7LT1vWeyRuRPrlof9n639DqmLkyd8ROLUv&query=${this.item}`)).json())['foods'];
+        }
     }
 }
 </script>
